@@ -6,7 +6,7 @@ services:
     volumes:
       - ${DATA_DB}:/data/db
   elasticsearch:
-    image: "docker.elastic.co/elasticsearch/elasticsearch-oss:6.6.1"
+    image: "docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.5"
     environment:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     env_file: .elastic.env
@@ -15,7 +15,7 @@ services:
         soft: -1
         hard: -1
   graylog:
-    image: graylog/graylog:3.0
+    image: graylog/graylog:3.3
     env_file: .gray.env
     volumes:
       - ./graylog_volume:/etc/graylog
